@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #F0F4F8; 
+    overflow-x: hidden;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Header with a deeper background for contrast */
+header {
+    background-color: #a35050;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Navigation Bar */
+/* Navigation Bar - Arrange horizontally at the top */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the page */
+    background: #333; /* Dark background for the nav bar */
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center;
+    padding: 10px 0; /* Adds space on top and bottom */
+    z-index: 100; /* Ensures the nav bar stays on top of other content */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes the list items appear in a row */
+}
+
+nav ul li {
+    margin: 0 15px; /* Adds space between each nav item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #575757;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/* Section Background Color */
+.section {
+    padding: 20px;
+    margin: 20px;
+    background: #ffffff; /* Clean white background for sections */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Section Titles */
+.section h2 {
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+}
+
+/* Profile Photo Zoom & Shadow */
+.profile-photo {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Section Effect */
+.section:hover {
+    animation: floatUp 1s ease-in-out infinite alternate;
+}
+
+/* Button Hover Animation */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #4CAF50; /* Soft green button */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .profile-photo {
+        max-width: 130px;
+    }
+}
